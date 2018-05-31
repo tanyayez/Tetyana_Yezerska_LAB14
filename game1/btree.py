@@ -12,12 +12,13 @@ def build_tree(node):
     board = node.data
     if board.num_free() == 0:
         pass
-    else:
+    elif board.check_f('x') == "continue":
         sing = board.pre_pos[0]
         if sing == 'o':
             sing = 'x'
         elif sing == 'x':
             sing = 'o'
+
         free = board.get_free_lst()
         pos_r = random.choice(free)
         free.remove(pos_r)
