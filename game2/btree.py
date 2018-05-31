@@ -12,7 +12,7 @@ def build_tree(node):
         board = node.data
         if board.num_free() == 0:
             pass
-        else:
+        elif board.check_f('o') == "continue":
             sing = board.pre_pos[0]
             if sing == 'o':
                 sing = 'x'
@@ -87,9 +87,7 @@ class BTree:
             if i is not None:
                 nums.append(check1(i))
                 rs.append(i)
-        print(nums)
         el = max(nums)
-        print(el)
         ind = nums.index(el)
         move = rs[ind].data.pre_pos[1]
         return move
